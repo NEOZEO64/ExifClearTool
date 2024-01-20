@@ -5,7 +5,6 @@ inputPath = "./withExif/"
 outputPath = "./withoutExif/"
 content = os.listdir(inputPath)
 
-
 def get_exif(path):
     exif_table = {}
     image = Image.open(path)
@@ -14,7 +13,6 @@ def get_exif(path):
         decoded = PIL.ExifTags.TAGS.get(tag, tag)
         exif_table[decoded] = value
     return exif_table
-
 
 for part in content:
     inPath = inputPath + part
